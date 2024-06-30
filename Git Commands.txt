@@ -1,0 +1,105 @@
+A. Setting up repo First time:
+
+	Step 1: Local setup:
+
+		1. initialize the local repo to get tracked by github
+
+			- git init
+
+	Step 2: Remote setup:
+
+		1. Add a name to your new repo using which you can refer it
+
+			- Git remote add <remote-name> <repo url>
+
+	Step 3: Push setup first time:
+
+		1. Set upstream to always push in this branch
+
+			- git push --set-upstream <repo-name> <branch-name> 
+
+			- After this we can just type git push and it will push to this branch
+
+B. Git Push
+
+	1. Push Current local branch to remote 
+
+		- Git push <remote-repo-name> <remote-branch-name>
+
+	2. Push All branches to remote
+
+		- Git push <remote-repo-name> --all
+
+	3. Push from one local branch to another branch in remote:
+
+		- git push <repo-name> <local-branch-name> : <remote-branch-name>
+
+C. Creating a branch:
+
+	1. Creating in loacl:
+
+		- git branch - <new-branch-name>
+
+		- git checkout -b <new-branch-name>
+
+	2. Creating in remote:
+
+		- git push <repo-name> <new-branch-name>
+
+D. Deleting a branch
+
+	1. Delete in local
+	
+		- git branch -d <branch-name>
+
+	2. Delete in remote repo
+
+		- git push <remote-repo-name> --delete <remote-branch-name>
+
+E. Remote Repo setup:
+
+	1. Removing a remote repo mapping with a local repo
+
+		- git remote remove <remote-repo-name>
+
+	2. Changing the url of remote branch for your local
+
+		- git remote set-url <repo-name> <new-repo-url>
+
+	3. Add a new remote repo to you local to push code into it:
+
+		- Git remote add <remote-name> <repo url>
+
+F. Cloning a remote repo to local:
+
+	1. Cloning main branch:
+
+		- Git clone <repo-url>
+
+	2. Cloning specific branch:
+
+		- Git clone --branch <remote-branch-name> <repo-url>
+
+	3. Cloning all branches:
+
+		- Step 1: Git Clone <repo-url>
+
+		- Step 2: Retrieve or Fetch all branches from remote 
+		
+			- Git fetch --all
+
+		- Step 3: Track all branches using below command: (create a local branch for each remote branch)
+
+			- git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+
+			- it is a bash command where | symbol pts output of one command into input of other command
+
+		- Step 4: Git pull -all
+
+
+
+
+
+
+
+
