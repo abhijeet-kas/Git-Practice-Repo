@@ -20,6 +20,10 @@ A. Setting up repo First time:
 
 			- After this we can just type git push and it will push to this branch
 
+Note: Sometimes Git doesn't allows to push if we don't have master branch in local. 
+	- Thus, Always setup everything in master branch in local first while setting up you repo first time. 
+
+
 B. Git Push
 
 	1. Push Current local branch to remote 
